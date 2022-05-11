@@ -1,0 +1,23 @@
+{% extends "homepage.html" %} 
+{% load static %} 
+{% block content %}
+<div class="row m-0">
+  <div class="col-lg-6">
+  </div>
+  <div class="col-lg-6">
+ 
+    <form action="#" method="post">
+        {% csrf_token %}
+        <!-- Email: -->
+        <input type="email" id="Email" name="email" placeholder="Your Email Id"><br><br>
+        <!-- Password: -->
+        <input type="password" id="Password" name="pass" placeholder="Password"><br><br>
+        
+        <a  href="{% url 'signupage' %}"><input type="button" value="SignUp" class="btn btnc"></a>
+    
+        <a  href="{% url 'signupage' %}"><input type="button" value="SignIn" class="btn btnc"></a>
+     
+    </form>
+  </div>
+</div>
+{% endblock %}
