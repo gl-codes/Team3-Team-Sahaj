@@ -1,0 +1,15 @@
+{% extends "homepage.html" %} 
+{% load static %} 
+{% block content %}
+<div class="container postbg">
+  
+<form action="display" method="post" class="formpost">
+  {% csrf_token %}
+  <h4 style="color: rgb(202, 202, 202);"> Enter Details </h4>
+  <input  placeholder="From City PinCode" type="number"id="name" name="srcpin">
+  <input  placeholder="To City PinCode" type="number"id="name" name="destpin">
+  <input type="submit" value="Show" class="btn btnc">
+</form>
+</div>
+
+{% endblock %}

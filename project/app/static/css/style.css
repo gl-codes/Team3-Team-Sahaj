@@ -1,0 +1,186 @@
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 50px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 850;
+
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  margin: 0 20px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+
+nav.fill ul li a:hover {
+  color: #fff;
+  z-index: 1;
+}
+
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 0.5s forwards;
+  -webkit-animation: fill 0.5s forwards;
+  -moz-animation: fill 0.5s forwards;
+  opacity: 1;
+}
+
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #353351;
+  }
+}
+
+.logo {
+  background-color: transparent;
+  width: 5rem;
+}
+
+.postbg {
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+
+  background-color: #333d56;
+}
+
+.formpost {
+  margin: 20px auto;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+input,
+textarea,
+button {
+
+  border: none;
+  margin: 10px;
+  height: 2.5rem;
+  width: 30rem;
+  border-radius: 10px;
+  color: #aaa;
+}
+textarea
+{
+  height: 10rem;
+}
+input,
+textarea {
+  overflow: hidden;
+  border: none;
+  background-color: #292b2c;
+}
+
+input::placeholder {
+  padding: 10px;
+  color: #aaa;
+}
+
+textarea::placeholder {
+  padding: 10px;
+  color: #aaa;
+}
+
+body {
+  background-image: url('cover.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+h1 {
+  font-size: 8rem;
+  font-weight: 800;
+  color: #f5f5f5;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f5f5f5;
+}
+
+.btnc {
+  background-color: rgb(29, 83, 164);
+  color: #fff;
+  width: 10rem;
+}
+
+.makeflex
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

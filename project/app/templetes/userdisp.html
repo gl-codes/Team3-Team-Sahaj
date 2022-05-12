@@ -1,0 +1,24 @@
+
+  {% extends "transport.html" %} 
+{% load static %} 
+{% block content %}
+
+<div class="container makeflex">
+    
+{% for i in data  %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{i.title}}</h5>
+      <p class="card-text">{{i.desc}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item">Fees :   {{i.fees}}</li>
+      <li class="list-group-item">Commodity : {{i.price}}</li>
+      <li class="list-group-item">Contact Number. :  {{i.number}}</li>
+    </ul>
+    <a  href="{% url 'Delete' %}"><input type="button" value="Delete" class="btn btnc"></a>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

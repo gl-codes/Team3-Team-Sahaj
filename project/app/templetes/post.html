@@ -1,0 +1,47 @@
+{% extends "homepage.html" %} 
+{% block content %}
+<script>
+    function onPositionUpdate(position)
+        {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            var  v='https://maps.google.com/?q='+lat+','+lng;
+            alert(v);
+        }
+    function getloc()
+    {
+
+        if(navigator.geolocation)
+            navigator.geolocation.getCurrentPosition(onPositionUpdate);
+        else
+            alert("navigator.geolocation is not available");
+    }
+</script>
+<div class="container postbg">
+
+<form action="insert" method="post" class="formpost" >
+    <div class="row">
+    {% csrf_token %}
+   <!-- Enter Your Email: -->
+   <div class="col-lg-6">
+   <input  placeholder="Title" type="text"id="name" name="title">
+   <input  placeholder="Contact" type="number"id="num" name="number">
+   <input  placeholder="Senders Addreess" type="text"id="source" name="source">
+   <input  placeholder="Senders postal code" type="text" id="source" name="senderspostalcode">
+   
+   <!-- Enter Your Password: -->
+    <input placeholder="Receivers Address"  type="textarea" id="dest" name="dest">
+    <input  placeholder="Receivers postal code" type="text" id="source" name="recieverspostalcode">
+    </div><div class="col-lg-6">
+    <textarea id="w3review" name="desc" placeholder="type your luggage description" cols="40"></textarea>
+    
+    <input placeholder="Transportation Fees"  type="number" id="price" name="fees">
+    <input placeholder="Price Of Commodity"  type="number" id="price" name="price">
+    <input type="button" onclick="getloc()" value="Set Locatation" class="btn btnc">
+   
+    <input type="submit" value="SUBMIT" class="btn btnc">
+</div>
+</div>
+</form>
+</div>
+{% endblock %}
